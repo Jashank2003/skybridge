@@ -1,0 +1,15 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: cadetblue;
+}
+
+.head{
+    padding:3px 3px;
+    margin:3px 2px;
+}
+.buton{
+    padding:2px 13px;
+    margin:3px 2px;
+    background-color: rgb(181, 165, 196);
+}

@@ -1,0 +1,17 @@
+.loginbutton {
+    display: block;
+    background-color: black;
+    margin: 200px auto;
+    padding :12px 18px;
+    color:white;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 3px;
+    border:2px solid black;
+  
+}
+.loginbutton:hover{
+    background:blue;
+    border-radius: 10px;
+    transition: 0.4s;
+}
