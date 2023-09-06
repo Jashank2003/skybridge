@@ -43,8 +43,25 @@ function Login() {
 
   return (
     <>
-      <div>hello welcome to skybridge</div>
-      <button className='loginbutton' onClick={login}>login here</button>
+      {/* <div>hello welcome to skybridge</div>
+
+      <button className='loginbutton' onClick={login}>login here</button> */}
+
+      <div className="container">
+      <h1 className="heading"><span className="lelo">Welcome to</span> SkyBridge</h1>
+    </div>
+    <div className="paraco">
+      <p className="para">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, ex!
+        Veniam vero a deleniti, reprehenderit maxime deserunt cum nobis
+        veritatis adipisci, id suscipit ea nemo assumenda quasi doloremque
+        velit. Laudantium.
+      </p>
+    </div>
+
+    <div className="buu">
+      <button className="button" onClick={login}>Sign in with google</button>
+    </div>
     </>
   )
 }
