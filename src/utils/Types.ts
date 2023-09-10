@@ -5,8 +5,14 @@ export interface BreadCrumbsType {
 }
 
 export interface UserType{
+    uid:string;
     email: string;
     name:string;
-    uid:string;
     label?:string;
 }
+
+export interface UserOption {
+    uid: string;
+    name: string;
+    // Add other properties if necessary
+  }

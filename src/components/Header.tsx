@@ -6,9 +6,15 @@ import { useAppSelector } from '../app/hooks'
 import { signOut } from 'firebase/auth'
 import { firebaseAuth } from '../utils/FirebaseConfig'
 import { getCreateMeetingBreadCrumbs } from '../utils/breadCrumbs'
+import logo from '../assets/logo.png'
 
 function Header() {
-    const navigate = useNavigate()
+
+  const navigate = useNavigate()
+
+  const handleLogoClick  = ()=> {
+      window.location.reload();
+  }
     const location = useLocation()
     const username = useAppSelector((bridge) =>bridge.auth.userInfo?.name)
     const [breadCrumbs,setBreadCrumbs] = useState([{text:"Dashboard"}])
@@ -27,9 +33,15 @@ function Header() {
 
   return (
    <>
+   <div className="navbar">
+    <div className="logos">
+    <img className='logoshape' onClick={handleLogoClick } src={logo} alt="Nhi hai img" />
+    <div className="logo">SkyBridge</div>
+    </div>
    <div className="header">
     <h3 className='head'>hello {username}</h3>
     <button className='buton' onClick={logout}>logout</button>
+   </div>
    </div>
    </>
   )

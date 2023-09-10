@@ -62,7 +62,8 @@ export default function useFetchUsers() {
        }
    }, [uid]);
 
-   return { users, loading, error }; // Return an object with users, loading, and error
+   return { users, loading, error }
+   ; // Return an object with users, loading, and error
 }
 
 

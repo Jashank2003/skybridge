@@ -1,19 +1,93 @@
-.createameet{
-    display: flex;
-    margin:10% 2%;
-    justify-content: space-around;
-    background-color: aquamarine;
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Alfa+Slab+One&display=swap');
+
+.dashboardcont{
+   background-image: url(../assets/dashboard.jpeg);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   width: 100vw;
+   height: 100vh;
+   position: fixed;
+   z-index:-2;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
 }
 
-.card{
-    padding:120px 120px;
-    margin:3px 3px ;
-    font-size: larger;
-    border-radius: 10px;
-    font-weight: 600;
+.animation{
+    margin-left: 8%;
 }
-.card:hover{
-    background-color: black;
-    transition: 0.5s;
+
+
+.createameet{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+   
+}
+
+.headingindash{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 40vh;
+}
+.headingm{
+    color: #FFF;
+    text-align: center;
+    font-family: Alfa Slab One;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.headingn{
+    color: #FFF;
+    text-align: center;
+    font-family: Alfa Slab One;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.paraindash{
+
+    margin:auto auto;
+    width:50%;
+    text-align: center;
+    justify-content: center;
+    color: #FFF;
+    color: rgba(255, 255, 255, 0.40);
+    text-align: center;
+    font-family: Alegreya Sans;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+    /* justify-content: center; */
+}
+
+
+.cardindash{
+    width:40%;
+    background: none;
     color:white;
+    font-size:2rem;
+    font-family: Alfa Slab One;
+    transition: 0.4s ease-in-out;
+    font-weight: 100;
+    outline:none;
+    border-radius: 2px;
+    border: 2px solid whitesmoke;
+    padding: 3px 3px;
+}
+.cardindash:hover{
+    background-color: rgb(247, 242, 242);
+    color: black;
+    outline:none;
 }

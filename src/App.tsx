@@ -5,10 +5,14 @@ import Dashboard from './pages/Dashboard';
 import {Routes,Route} from "react-router-dom"
 import CreateMeeting from './pages/CreateMeeting';
 import OneOnOneMeeting from './pages/OneOnOneMeeting';
+// import { EuiProvider } from '@elastic/eui';
+import "@elastic/eui/dist/eui_theme_dark.css"
+
+
 
 function App() {
   return (
-   <>
+   
     <Routes>
       <Route path ="/login" element={<Login/>} />
       <Route path ="/" element={<Dashboard/>} />
@@ -16,7 +20,7 @@ function App() {
       <Route path ="/create" element={<CreateMeeting/>} />
       <Route path ="/oneononemeet" element={<OneOnOneMeeting/>} />
     </Routes>
-   </>
+ 
   );
 }
 
