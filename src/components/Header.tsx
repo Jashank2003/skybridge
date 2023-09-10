@@ -45,7 +45,6 @@ function Header() {
     </div>
 
    <div className="header">
-    <img className='morepic' src={more} alt="more about us" onClick={toggleDropdown} />
     
     <div className={`dropdown-container ${isDropdownOpen ? 'show' : ''}`}>
           <div className="dropdown-content">
@@ -54,6 +53,7 @@ function Header() {
             </div>
               
             </div>
+    <img className='morepic' src={more} alt="more about us" onClick={toggleDropdown} />
 
    </div>
    </div>

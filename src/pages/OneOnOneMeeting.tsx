@@ -20,12 +20,9 @@ function OneOnOneMeeting() {
     const navigate = useNavigate();
     const { users, loading, error } = useFetchUsers(); 
     const uid = useAppSelector((bridge)=> bridge.auth.userInfo?.uid)
-    
     const[meetingName , setMeetingName] = useState("")
     const [selectedUser,setSelectedUser] = useState<Array<UserType>>([])
     const [startDate,setStartDate] = useState(moment());
-    const [UID , setUID] = useState("");
-
 
     const onUserChange = (selectedOptions:Array<UserType>)=>{
       setSelectedUser(selectedOptions)

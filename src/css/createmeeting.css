@@ -1,17 +1,61 @@
-.section{
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Alfa+Slab+One&display=swap');
+.sectionofcreatemeet{
+
+    background-image: url(../assets/CreateMeet.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw; 
+    height: 100vh; 
+    overflow-x:hidden;
+    position: fixed;
+    z-index:-2;
+}
+
+.sectionmeet{
     display: flex;
-    margin:10% 2%;
+    width:80%;
+    height: 80%;
+    margin: 2% auto;
     justify-content: space-around;
-    background-color: aquamarine;
+    align-items: center;
+    /* background-color: yellow; */
 }
-.card{
-    padding:120px 120px;
-    margin:3px 3px ;
-    font-size: larger;
+
+.flexbox1{
+    /* background-color: red; */
+    width: 38%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
+    border: 3px solid white;
+    justify-content: space-around;
+    align-items: center;
+
+
 }
-.card:hover{
-    background-color: black;
-    transition: 0.5s;
-    color:white;
+.flexbox1 h3{
+    color:whitesmoke;
 }
+.im{
+    width:50%;
+    height: 50%;
+}
+.cbutton{
+    font-family: Alegreya Sans;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border: 3px solid white;
+    border-radius: 20px;
+    color:whitesmoke;
+    background: none;
+    transition: 0.5s ;
+    padding:10px 30px;
+}
+
+.cbutton:hover{
+    color: black;
+    background-color: whitesmoke;
+}
+
