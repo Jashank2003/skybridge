@@ -34,6 +34,13 @@ function Dashboard() {
         </div>
         </div>
         <button className="cardindash" onClick={()=>navigate("/create")}>Create Meeting</button>
+        <div className="viewmeet">
+
+        <p>Already have a meeting? <button className='viewbut' onClick={()=>navigate("/create")} >
+          View Meeting
+        </button></p>
+        
+        </div>
       </div>
 
       </div>

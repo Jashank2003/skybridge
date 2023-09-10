@@ -34,9 +34,9 @@
 }
 .header{
     display: flex;
-    justify-content: space-evenly;
-    background-color: cadetblue;
-    width:50%;
+    justify-content: space-around;
+    /* background-color: cadetblue; */
+    width:10%;
 }
 
 .head{
@@ -48,3 +48,30 @@
     margin:3px 2px;
     background-color: rgb(181, 165, 196);
 }
+.morepic{
+    width:25px;
+    height:25px;
+}
+
+.dropdown-container {
+    display: none; /* Initially hide the dropdown content */
+    position: absolute;
+    top: 100%; /* Position it below the image */
+    right: 0; /* Adjust as needed */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Ensure it's above other content */
+    transition: 0.5s;
+  }
+  
+  /* Style for the dropdown content (e.g., logout button) */
+  .dropdown-content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Show the dropdown content when the dropdown-container has the "show" class */
+  .show {
+    display: block;
+  }

@@ -7,9 +7,14 @@ import { signOut } from 'firebase/auth'
 import { firebaseAuth } from '../utils/FirebaseConfig'
 import { getCreateMeetingBreadCrumbs } from '../utils/breadCrumbs'
 import logo from '../assets/logo.png'
+import more from '../assets/more.png'
 
 function Header() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
+  const toggleDropdown = () =>{
+    setIsDropdownOpen(!isDropdownOpen)
+  }
   const navigate = useNavigate()
 
   const handleLogoClick  = ()=> {
@@ -38,9 +43,18 @@ function Header() {
     <img className='logoshape' onClick={handleLogoClick } src={logo} alt="Nhi hai img" />
     <div className="logo">SkyBridge</div>
     </div>
+
    <div className="header">
-    <h3 className='head'>hello {username}</h3>
-    <button className='buton' onClick={logout}>logout</button>
+    <img className='morepic' src={more} alt="more about us" onClick={toggleDropdown} />
+    
+    <div className={`dropdown-container ${isDropdownOpen ? 'show' : ''}`}>
+          <div className="dropdown-content">
+            <button className='buttonlogout' onClick={logout}>logout</button>
+           <button>Aboutus</button>
+            </div>
+              
+            </div>
+
    </div>
    </div>
    </>
