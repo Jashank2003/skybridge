@@ -15,7 +15,12 @@ function MeetingDateField({
 
   return (
     <div>
-      <div><label htmlFor="timing">Select Date</label></div>
+      {/* <div><label 
+      style={{
+        color:'grey',
+        fontSize:'1.2rem',
+        marginBottom:'3%',
+      }} htmlFor="timing">Select Date</label></div> */}
       <div>
       <input
         type="date"
@@ -23,6 +28,18 @@ function MeetingDateField({
         id="timing"
         required
         onChange={handleDateChange}
+        style={{
+          background: 'none',
+          border: 'none',
+          borderBottom: '3px solid purple', // Initial border color is purple
+          outline: 'none',
+          transition: 'border-color 0.2s ease',
+          color:'white',
+          fontSize:'1.2rem',
+          fontWeight: '400',
+          paddingLeft:'3px',
+          // margin: 'auto auto',
+        }}
       />
       </div>
     </div>

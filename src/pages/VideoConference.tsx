@@ -14,6 +14,7 @@ import { generateMeetingID } from '../utils/generateMeetingID'
 import { useAppSelector } from '../app/hooks'
 import { UserType } from '../utils/Types'
 import { useNavigate } from 'react-router-dom'
+import MeetingMaxUserField from '../components/FormComponents/MeetingMaxUserField'
 
 function OneOnOneMeeting() {
   useAuth()  
@@ -23,6 +24,9 @@ function OneOnOneMeeting() {
     const[meetingName , setMeetingName] = useState("")
     const [selectedUser,setSelectedUser] = useState<Array<UserType>>([])
     const [startDate,setStartDate] = useState(moment());
+    const [size,setSize] = useState(1);
+    const [anyoneCanJoin,setAnyoneCanJoin] = useState(false);
+
 
     const onUserChange = (selectedOptions:Array<UserType>)=>{
       setSelectedUser(selectedOptions)
@@ -43,10 +47,10 @@ function OneOnOneMeeting() {
             createdBy: uid,
             meetingId,
             meetingName,
-            meetingType:"1-on-1",
-            invitedUsers:[selectedUser[0].uid],
+            meetingType: anyoneCanJoin ?"anyone can join" : "Video Conference",
+            invitedUsers: anyoneCanJoin ? [] : selectedUser.map((user: UserType)=> user.uid),
             meetingDate: startDate.format('L'),
-            maxUsers:1,
+            maxUsers: anyoneCanJoin ? 100 : size,
             status:true,
           })
           navigate("/");
@@ -73,10 +77,30 @@ function OneOnOneMeeting() {
   return (
     <>
         <Header/>
+      
+       
+
         <div className="center-container">
-          <h1>Schedule Your Meeting</h1>
+        <h1>Schedule Your Meeting</h1>
         <div className="content-container">
-          
+        <label 
+        style={{
+          color:'white',
+          fontSize:'1rem',
+          fontWeight:'400',
+          marginBottom:'2%',
+        }}
+        htmlFor="Anyone Can Join">Anyone Can Join :
+         <input
+           style={{
+            marginBottom:'2%',
+            marginLeft:'3%',
+          }}
+          type="checkbox" 
+         checked={anyoneCanJoin} onChange={(e)=>setAnyoneCanJoin(e.target.checked)} />
+
+         </label>
+
         <MeetingNameField 
         label="Meeting Name" 
         placeholder="Meeting Name" 
@@ -84,14 +108,22 @@ function OneOnOneMeeting() {
         setMeetingName={setMeetingName}/>
 
         <div className="select">
+        {
+            anyoneCanJoin ?
+         <MeetingMaxUserField value={size}
+         setValue={setSize}/>
+
+          :
         <MeetingUsersField label="Invite" 
         options={users || []} 
         onChange={onUserChange}
         selectedOptions={selectedUser} 
         isClearable={false} 
-        placeholder="Invite User" 
-        singleSelection= {{asPlainText:true}} />
+        placeholder="Select Users" 
+        singleSelection= {false} />
+    }
         </div>
+
         <MeetingDateField selected={startDate} setStartDate={setStartDate}/>
        
           <CreateMeetingButtons createMeeting={createMeeting}/>

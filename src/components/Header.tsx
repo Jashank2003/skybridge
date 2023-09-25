@@ -29,6 +29,7 @@ function Header() {
     // Functions
     const logout = ()=>{
     signOut(firebaseAuth);
+    navigate("/login");
     }
 
     useEffect(()=>{

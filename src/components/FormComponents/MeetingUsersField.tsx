@@ -8,33 +8,32 @@ function MeetingUsersField(
         label: string; options: any; onChange: any; selectedOptions: any; isClearable?: boolean; placeholder: string; singleSelection: { asPlainText: boolean } | boolean;
     }
 ) {
+
+    const comboBoxStyle = {
+        background: 'none',
+        border: 'none',
+        // borderBottom: '2px solid purple', // Initial border color is purple
+        outline: 'none',
+        transition: 'border-color 0.2s ease',
+        marginLeft: '-88px',
+    };
+
     return (
         <>
-        <EuiFormRow label={label}>
+        <EuiFormRow>
             <EuiComboBox
-            singleSelection= {{asPlainText:true}}
+            singleSelection= {singleSelection}
             options={options}
             onChange={onChange}
             selectedOptions={selectedOptions}
             isClearable={isClearable}
             placeholder={placeholder}
+            style={comboBoxStyle}
+            
             />
 
             
-        </EuiFormRow>
-            {/* <div>
-                <label>{label}</label>
-                <Select
-                    required
-                    isMulti={!singleSelection}
-                    options={options}
-                    onChange={onChange}
-                    value={selectedOptions}
-                    isClearable={isClearable}
-                    placeholder={placeholder}
-                />
-            </div> */}
-            
+        </EuiFormRow>    
         </>
     )
 }

@@ -15,7 +15,7 @@ function useAuth() {
                 navigate("/login")
             } 
             else{
-                console.log(currentUser)
+                // console.log(currentUser)
                 dispatch(setUser({
                     uid:currentUser.uid,
                     email:currentUser.email,

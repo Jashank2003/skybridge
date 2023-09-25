@@ -1,13 +1,31 @@
 .center-container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh; /* Center vertically in the viewport */
+    background-image: url(../assets/Desktop\ -\ 17.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+.center-container h1{
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    margin-bottom: 2%;
 }
 
 .content-container {
-    text-align: center;
-    max-width: 400px; /* Adjust the maximum width as needed */
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    height: 36vh;
+    justify-content: space-between;
+    /* background-color: yellow; */
+    /* text-align: center; */
+    max-width: 30vw; /* Adjust the maximum width as needed */
     width: 100%;
     padding: 20px;
 }
